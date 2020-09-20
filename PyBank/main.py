@@ -5,6 +5,12 @@ import csv
 #write file path
 csvpath = os.path.join('..', r'Resources', r'budget_data.csv')
 
+# identify values
+def print_percentages(Budget_data):
+    date = str(budget_data [0])
+    profloss = str(Budget_data[1])
+    
+
 #open file
 with open(csvpath) as csvfile:
 
@@ -21,6 +27,7 @@ with open(csvpath) as csvfile:
         print(row)
 
 #script that analyzes the following
+
 #total number of months included in the dataset
 
 
