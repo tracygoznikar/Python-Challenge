@@ -25,6 +25,12 @@ with open(csvpath) as csvfile:
 
 
 #the net total amount of "Profit/Losses" over the entire period
+
+
 #the average of the changes in "Profit/Losses" over the entire period
+
+
 #the greatest increase in profits (date and amount) over the entire period
+
+
 #the greatest decrease in losses (date and amount) over the entire period
