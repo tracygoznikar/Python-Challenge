@@ -2,20 +2,20 @@
 import os
 import csv
 
+budgetdate = 0
+profit_loss = 0
+increase_profit = 0
+decrease_profit = 0
+average_profit = 0
+
 #write file path
-csvpath = os.path.join('..', r'Resources', r'budget_data.csv')
+csvpath = os.path.join('Resources', 'budget_data.csv')
+outpath = os.path.join('analysis', 'output.txt')
 
 # identify values
-def print_percentages(Budget_data):
-    date = str(budget_data [0])
-    profloss = str(Budget_data[1])
-    
-
-#open file
 with open(csvpath) as csvfile:
-
     # CSV reader and specify delimiter, print
-    csvreader = csv.reader(csvfile, delimiter=',')
+    csvreader = csv.DictReader(csvfile, delimiter=',')
     print(csvreader)
 
     # Read the header row first (skip this step if there is now header)
@@ -23,12 +23,12 @@ with open(csvpath) as csvfile:
     print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
-    for row in csvreader:
-        print(row)
-
-#script that analyzes the following
-
-#total number of months included in the dataset
+    for row in csvreader.fieldnames:
+    
+        
+        
+        break
+        #total number of months in the dataset
 
 
 #the net total amount of "Profit/Losses" over the entire period
@@ -40,4 +40,4 @@ with open(csvpath) as csvfile:
 #the greatest increase in profits (date and amount) over the entire period
 
 
-#the greatest decrease in losses (date and amount) over the entire period
+#the greatest decrease in losses (date and amount) over the entire 
