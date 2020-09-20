@@ -2,7 +2,7 @@
 import os
 import csv
 
-budgetdate = 0
+budgetdate = str(0)
 profit_loss = 0
 increase_profit = 0
 decrease_profit = 0
@@ -24,8 +24,12 @@ with open(csvpath) as csvfile:
 
     # Read each row of data after the header
     for row in csvreader.fieldnames:
-    
-        
+        #budgetdate.append(row[1])
+        print(budgetdate)
+        print(row[0] + "," + row[1])
+        print(row)
+        total_months = len(budgetdate)
+        print(total_months)
         
         break
         #total number of months in the dataset
