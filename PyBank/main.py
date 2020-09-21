@@ -47,13 +47,13 @@ with open(csvpath,newline='') as csvfile:
 # # print(csv_header)
 
     for row in csvreader:
-        profloss.append(row[1])
+        profit_loss.append(row[1])
 
      
-    print(profloss[0])
-    print(profloss[85])
-    avgchange=(int(profloss[85])-int(profloss[0]))/85
-    print(avgchange)
+    print(profit_loss[0])
+    print(profit_loss[85])
+    avgchange=(int(profit_loss[85])-int(profit_loss[0]))/85
+    print(average_profit)
 
 
 #the greatest increase in profits (date and amount) over the entire period
