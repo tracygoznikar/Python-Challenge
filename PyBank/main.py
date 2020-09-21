@@ -2,9 +2,11 @@
 import os
 import csv
 import statistics
+import math
 
 budgetdate = 0
 total_months = 0
+profit_loss = 0
 profit_loss_total = 0
 increase_profit = 0
 decrease_profit = 0
@@ -17,7 +19,7 @@ outpath = os.path.join('analysis', 'output.txt')
 
 with open(csvpath) as csvfile:
     # CSV reader and specify delimiter, print
-    #csvreader = csv.DictReader(csvfile, delimiter=',')
+    csvreader = csv.DictReader(csvfile, delimiter=',')
     #csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
     # Read the header row first (skip this step if there is now header)
     csv_header = next(csvreader)
@@ -25,22 +27,22 @@ with open(csvpath) as csvfile:
 
 
 
-def print_percentages(budget_data):
+#def budget_data
     # For readability, it can help to assign your values to variables with descriptive names
-    date = int(budget_data[0])
-    profit_loss = int(budget_data[1])
+    #date = int(budget_data[0])
+    #profit_loss_total = int(budget_data[1])
 
     # Total months 
-    total_months = 
+   # total_months = date.fsum
 
     # the net total amount of "Profit/Losses" over the entire period
-    win_percent = (wins / total_matches) * 100
+    #profit_loss_total = (average_profit)
 
     # the average of the changes in "Profit/Losses" over the entire period
-    loss_percent = (losses / total_matches) * 100
+    
 
     # the greatest increase in profits (date and amount) over the entire period
-    draw_percent = (draws / total_matches) * 100
+    
 
     #the greatest decrease in losses (date and amount) over the entire period
 
@@ -52,7 +54,7 @@ def print_percentages(budget_data):
 with open(csvpath) as csvfile:
     # CSV reader and specify delimiter, print
     #csvreader = csv.DictReader(csvfile, delimiter=',')
-    #csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
+    csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
     # Read the header row first (skip this step if there is now header)
     csv_header = next(csvwriter)
 
@@ -62,7 +64,7 @@ with open(csvpath) as csvfile:
     # Print out the ouput
         print("Financial Analysis")
         print("------------------")
-        print(f"Total Months: {str(total_months)")
+        print(f"Total Months: {str(total_months)}")
         print(f"Total: {str(profit_loss_total)}")
         print(f"Average Change: {str(average_profit)}")
         print(f"Greatest Increase of Profits: {str(increase_profit)}")
