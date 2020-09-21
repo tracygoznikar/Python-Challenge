@@ -1,63 +1,64 @@
 #import modules
 import os
 import csv
-import statistics
-import math
-
-budgetdate = 0
-total_months = 0
-profit_loss = 0
-profit_loss_total = 0
-increase_profit = 0
-decrease_profit = 0
-average_profit = 0
 
 #write file path
 csvpath = os.path.join('Resources', 'budget_data.csv')
 outpath = os.path.join('analysis', 'output.txt')
 
+#name file
+file_name = 'budget_data.csv'
 
-with open(csvpath) as csvfile:
-    # CSV reader and specify delimiter, print
-    csvreader = csv.DictReader(csvfile, delimiter=',')
-    #csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
-    # Read the header row first (skip this step if there is now header)
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
+#set variables and set to 0
+number_months = 0
+net_profit_loss = 0
+avg_profit_loss = 0
+max_profit = 0
+loss_profit = 0
 
+#initializing rows
+budget_row = []
+Profit/Losses = []
 
-
-#def budget_data
-    # For readability, it can help to assign your values to variables with descriptive names
-    #date = int(budget_data[0])
-    #profit_loss_total = int(budget_data[1])
-
-    # Total months 
-   # total_months = date.fsum
-
-    # the net total amount of "Profit/Losses" over the entire period
-    #profit_loss_total = (average_profit)
-
-    # the average of the changes in "Profit/Losses" over the entire period
+#open and read file csv
+with open(csvpath, 'r') as csvfile:
+    # CSV reader and set as dict
+    csvreader = csv.DictReader(csvfile)
+   # Reads each row of the dict
+    for row in csvreader:
+        # read colums and make integer
+        budget_row = int(row["Profit/Losses"]) 
+        net_profit_loss += int(row["Profit/Losses"])
+        # compare rows to find max amount
+        if max_profit == 0 or max_profit < budget_row:
+            max_profit = int(budget_row)
+        # compare rows to find min
+        if loss_profit == 0 or loss_profit > budget_row:
+            loss_profit = int(budget_row)   
     
-
-    # the greatest increase in profits (date and amount) over the entire period
+    # Creates variable for counting the number of lines, minus the header row   
+    number_months = csvreader.line_num - 1
     
+    # Format values using "${:.2f}"
+    avg_profit_loss = "${:,.2f}".format(net_profit_loss/number_months)
+    net_profit_loss = "${:,.2f}".format(net_profit_loss)
+    max_profit = "${:,.2f}".format(max_profit)
+    loss_profit = "${:,.2f}".format(loss_profit)
 
-    #the greatest decrease in losses (date and amount) over the entire period
 
+  # Prints to terminal
+    print(f"CSV Path: {csvpath}") 
+    print(f"Analysis Path: {outpath}")
+    print(f" ")
+    print(f"Budget Analysis of {file_name}")
+    print(f"Total Number of Months: {number_months}")
+    print(f"Net PL: {net_profit_loss}")
+    print(f"Average PL: {avg_profit_loss}")
+    print(f"Greatest Increase: {max_profit}")
+    print(f"Greatest Decrease: {loss_profit}")
 
-
-
-
-# identify values
-with open(csvpath) as csvfile:
-    # CSV reader and specify delimiter, print
-    #csvreader = csv.DictReader(csvfile, delimiter=',')
-    csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
-    # Read the header row first (skip this step if there is now header)
-    csv_header = next(csvwriter)
-
+with open(outpath, "w", newline=' ' )
+   csvwriter = csv.writer(csvfile, delimiter=' ')
     # Read each row of data after the header
     for row in csvwriter:        
 
@@ -69,6 +70,51 @@ with open(csvpath) as csvfile:
         print(f"Average Change: {str(average_profit)}")
         print(f"Greatest Increase of Profits: {str(increase_profit)}")
         print(f"Greatest Decrease in Profits {str(decrease_profit)}")
+
+
+
+
+
+
+
+
+
+
+
+
+#format = "${:.2f}"
+
+
+#resources used
+#https://stackoverflow.com/questions/5180365/python-add-comma-into-number-string
+#https://docs.python.org/3/library/csv.html
+#https://www.geeksforgeeks.org/working-csv-files-python/
+#https://stackoverflow.com/questions/13428318/reading-rows-from-a-csv-file-in-python
+
+
+
+
+
+
+# identify values
+#with open(csvpath) as csvfile:
+    # CSV reader and specify delimiter, print
+    #csvreader = csv.DictReader(csvfile, delimiter=',')
+ #   csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
+    # Read the header row first (skip this step if there is now header)
+  #  csv_header = next(csvwriter)
+
+    # Read each row of data after the header
+   # for row in csvwriter:        
+
+    # Print out the ouput
+    #    print("Financial Analysis")
+     #   print("------------------")
+      #  print(f"Total Months: {str(total_months)}")
+       # print(f"Total: {str(profit_loss_total)}")
+       # print(f"Average Change: {str(average_profit)}")
+       # print(f"Greatest Increase of Profits: {str(increase_profit)}")
+       # print(f"Greatest Decrease in Profits {str(decrease_profit)}")
 
     
 
@@ -87,12 +133,3 @@ with open(csvpath) as csvfile:
     #print(profit_loss[85])
     #avgchange=(int(profit_loss[85])-int(profit_loss[0]))/85
     #print(average_profit)
-
-
-#the greatest increase in profits (date and amount) over the entire period
-
-
-#formated_average = "{:.2f}".format(average
-
-
-#the greatest decrease in losses (date and amount) over the entire 
