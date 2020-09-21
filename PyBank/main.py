@@ -3,6 +3,7 @@ import os
 import csv
 
 budgetdate = str(0)
+total_months = 0
 profit_loss = 0
 increase_profit = 0
 decrease_profit = 0
@@ -23,9 +24,9 @@ with open(csvpath) as csvfile:
     print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
-    for row in csvreader.fieldnames:
-        #budgetdate.append(row[1])
-        print(budgetdate)
+    for row in csvreader:
+            budgetdate.append(row[1])
+            print(budgetdate)
         print(row[0] + "," + row[1])
         print(row)
         total_months = len(budgetdate)
@@ -36,9 +37,23 @@ with open(csvpath) as csvfile:
 
 
 #the net total amount of "Profit/Losses" over the entire period
-
+    
 
 #the average of the changes in "Profit/Losses" over the entire period
+with open(csvpath,newline='') as csvfile:
+    csvreader = csv.reader(csvfile,delimiter=",")
+    # csvreader2 = csv.reader(csvfile,delimiter=",")
+    csv_header = next(csvreader)
+# # print(csv_header)
+
+    for row in csvreader:
+        profloss.append(row[1])
+
+     
+    print(profloss[0])
+    print(profloss[85])
+    avgchange=(int(profloss[85])-int(profloss[0]))/85
+    print(avgchange)
 
 
 #the greatest increase in profits (date and amount) over the entire period
