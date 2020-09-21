@@ -29,4 +29,4 @@ with open(csvpath, 'r') as csvfile:
    # Reads each row of the dict
     for row in csvreader:
         # read colums and make integer
-    
+    break

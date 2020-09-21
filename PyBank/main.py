@@ -57,7 +57,7 @@ with open(csvpath, 'r') as csvfile:
     print(f"Greatest Increase: {max_profit}")
     print(f"Greatest Decrease: {loss_profit}")
 
-with open(outpath, "w")
+with open(outpath, 'w')
    csvwriter = csv.writer(csvfile, delimiter=' ')
     # Read each row of data after the header
     for row in csvwriter:        
