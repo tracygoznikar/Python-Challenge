@@ -15,6 +15,16 @@ csvpath = os.path.join('Resources', 'budget_data.csv')
 outpath = os.path.join('analysis', 'output.txt')
 
 
+with open(csvpath) as csvfile:
+    # CSV reader and specify delimiter, print
+    #csvreader = csv.DictReader(csvfile, delimiter=',')
+    #csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
+    # Read the header row first (skip this step if there is now header)
+    csv_header = next(csvreader)
+    print(f"CSV Header: {csv_header}")
+
+
+
 def print_percentages(budget_data):
     # For readability, it can help to assign your values to variables with descriptive names
     date = int(budget_data[0])
@@ -42,35 +52,21 @@ def print_percentages(budget_data):
 with open(csvpath) as csvfile:
     # CSV reader and specify delimiter, print
     #csvreader = csv.DictReader(csvfile, delimiter=',')
-    csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
-    
-
+    #csvwriter = csv.writer(budgetdate, profit_loss, delimiter=',')
     # Read the header row first (skip this step if there is now header)
     csv_header = next(csvwriter)
-    print(f"CSV Header: {csv_header}")
-
 
     # Read each row of data after the header
-    for row in csvwriter:
-            #budgetdate.append(row[0])
-        #print(budgetdate)
-        #print(row[0] + "," + row[1])
-        #print(row)
-        #total_months = len(budgetdate)
-        #print(total_months)
-            total_months = total_months +1
-            print(total_months)
-            break
-        
+    for row in csvwriter:        
 
     # Print out the ouput
-    print("Financial Analysis")
-    print("------------------")
-    print(f"Total Months: {str(total_months)")
-    print(f"Total: {str(profit_loss_total)}")
-    print(f"Average Change: {str(average_profit)}")
-    print(f"Greatest Increase of Profits: {str(increase_profit)}")
-    print(f"Greatest Decrease in Profits {str(decrease_profit)}")
+        print("Financial Analysis")
+        print("------------------")
+        print(f"Total Months: {str(total_months)")
+        print(f"Total: {str(profit_loss_total)}")
+        print(f"Average Change: {str(average_profit)}")
+        print(f"Greatest Increase of Profits: {str(increase_profit)}")
+        print(f"Greatest Decrease in Profits {str(decrease_profit)}")
 
     
 
