@@ -1,10 +1,11 @@
 #import modules
 import os
 import csv
+import statistics
 
 budgetdate = 0
 total_months = 0
-profit_loss = 0
+profit_loss_total = 0
 increase_profit = 0
 decrease_profit = 0
 average_profit = 0
@@ -12,6 +13,30 @@ average_profit = 0
 #write file path
 csvpath = os.path.join('Resources', 'budget_data.csv')
 outpath = os.path.join('analysis', 'output.txt')
+
+
+def print_percentages(budget_data):
+    # For readability, it can help to assign your values to variables with descriptive names
+    date = int(budget_data[0])
+    profit_loss = int(budget_data[1])
+
+    # Total months 
+    total_months = 
+
+    # the net total amount of "Profit/Losses" over the entire period
+    win_percent = (wins / total_matches) * 100
+
+    # the average of the changes in "Profit/Losses" over the entire period
+    loss_percent = (losses / total_matches) * 100
+
+    # the greatest increase in profits (date and amount) over the entire period
+    draw_percent = (draws / total_matches) * 100
+
+    #the greatest decrease in losses (date and amount) over the entire period
+
+
+
+
 
 # identify values
 with open(csvpath) as csvfile:
@@ -36,10 +61,17 @@ with open(csvpath) as csvfile:
             total_months = total_months +1
             print(total_months)
             break
-        #total number of months in the dataset
+        
 
+    # Print out the ouput
+    print("Financial Analysis")
+    print("------------------")
+    print(f"Total Months: {str(total_months)")
+    print(f"Total: {str(profit_loss_total)}")
+    print(f"Average Change: {str(average_profit)}")
+    print(f"Greatest Increase of Profits: {str(increase_profit)}")
+    print(f"Greatest Decrease in Profits {str(decrease_profit)}")
 
-#the net total amount of "Profit/Losses" over the entire period
     
 
 #the average of the changes in "Profit/Losses" over the entire period
