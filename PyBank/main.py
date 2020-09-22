@@ -16,9 +16,6 @@ avg_profit_loss = 0
 max_profit = 0
 loss_profit = 0
 
-#initializing rows
-budget_row = []
-Profit/Losses = []
 
 #open and read file csv
 with open(csvpath, 'r') as csvfile:
@@ -57,19 +54,15 @@ with open(csvpath, 'r') as csvfile:
     print(f"Greatest Increase: {max_profit}")
     print(f"Greatest Decrease: {loss_profit}")
 
-with open(outpath, 'w')
-   csvwriter = csv.writer(csvfile, delimiter=' ')
-    # Read each row of data after the header
-    for row in csvwriter:        
-
+with open(outpath, 'w') as text_file:   
     # Print out the ouput
-        print("Financial Analysis")
-        print("------------------")
-        print(f"Total Months: {str(number_months)}")
-        print(f"Total: {str(net_profit_loss)}")
-        print(f"Average Change: {str(avg_profit_loss)}")
-        print(f"Greatest Increase of Profits: {str(max_profit)}")
-        print(f"Greatest Decrease in Profits {str(loss_profit)}")
+        print("Financial Analysis", file=text_file)
+        print("------------------", file=text_file)
+        print(f"Total Months: {str(number_months)}", file=text_file)
+        print(f"Total: {str(net_profit_loss)}", file=text_file)
+        print(f"Average Change: {str(avg_profit_loss)}", file=text_file)
+        print(f"Greatest Increase of Profits: {str(max_profit)}", file=text_file)
+        print(f"Greatest Decrease in Profits {str(loss_profit)}", file=text_file)
 
 
 #format = "${:.2f}"
