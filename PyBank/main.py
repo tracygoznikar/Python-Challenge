@@ -65,11 +65,11 @@ with open(outpath, 'w')
     # Print out the ouput
         print("Financial Analysis")
         print("------------------")
-        print(f"Total Months: {str(total_months)}")
-        print(f"Total: {str(profit_loss_total)}")
-        print(f"Average Change: {str(average_profit)}")
-        print(f"Greatest Increase of Profits: {str(increase_profit)}")
-        print(f"Greatest Decrease in Profits {str(decrease_profit)}")
+        print(f"Total Months: {str(number_months)}")
+        print(f"Total: {str(net_profit_loss)}")
+        print(f"Average Change: {str(avg_profit_loss)}")
+        print(f"Greatest Increase of Profits: {str(max_profit)}")
+        print(f"Greatest Decrease in Profits {str(loss_profit)}")
 
 
 #format = "${:.2f}"
