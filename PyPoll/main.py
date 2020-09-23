@@ -14,7 +14,7 @@ total_votes = 0
 candidate_list = 0
 percent_votes_won = 0
 totalnum_votes_won = 0
-winner = 0
+winner = str
 kvote = 0
 cvote = 0
 lvote = 0
@@ -67,6 +67,15 @@ lpercent = "{:.3%}".format(lvote/total_votes)
 tpercent = "{:.3%}".format(tvote/total_votes)
   #winner of election based on votes
 
+if kpercent > "{:.3%}".format(50):
+        Candidate = winner
+#if cpercent > 50:
+#        Candidate = winner
+#if lpercent > 50:
+#        Candidate = winner
+#if tpercent > 50:
+#        Candidate = winner
+
 with open(outpath, 'w') as text_file:   
     # Print out the ouput
     print("Election Results", file=text_file)
@@ -77,6 +86,6 @@ with open(outpath, 'w') as text_file:
     print(f"Correy: {str(cpercent)}  {str(cvote)}", file=text_file)
     print(f"Li: {str(lpercent)}  {str(lvote)}", file=text_file)
     print(f"O'Tooley: {str(tpercent)}  {str(tvote)}", file=text_file)
-  #  print(f"Average Change: {str(avg_profit_loss)}", file=text_file)
-   # print(f"Greatest Increase of Profits: {str(max_profit)}", file=text_file)
-    #print(f"Greatest Decrease in Profits {str(loss_profit)}", file=text_file)
+    print("------------------", file=text_file)
+    print(f"Winner: {str(winner)}", file=text_file)
+    print("------------------", file=text_file)
