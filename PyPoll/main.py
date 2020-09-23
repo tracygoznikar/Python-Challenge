@@ -51,16 +51,20 @@ with open(csvpath, 'r') as csvfile:
         if Candidate == "O'Tooley":
             tvote = tvote + 1
   # percent of votes each candidate won
-    (kvote / total_votes) * 100 = kpercent
-    (cvote / total_votes) * 100 = cpercent
-    (lvote / total_votes) * 100 = lpercent
-    (tvote / total_votes) * 100 = tpercent
+    #(kvote / total_votes) * 100 = kpercent
+    #(cvote / total_votes) * 100 = cpercent
+    #(lvote / total_votes) * 100 = lpercent
+   # (tvote / total_votes) * 100 = tpercent
 
 
   #total number of votes cast
 total_votes = csvreader.line_num - 1
-  # percent of votes each candidate won
 
+# percent of votes each candidate won
+kpercent = "{:.3%}".format(kvote/total_votes)
+cpercent = "{:.3%}".format(cvote/total_votes)
+lpercent = "{:.3%}".format(lvote/total_votes)
+tpercent = "{:.3%}".format(tvote/total_votes)
   #winner of election based on votes
 
 with open(outpath, 'w') as text_file:   
@@ -69,7 +73,10 @@ with open(outpath, 'w') as text_file:
     print("------------------", file=text_file)
     print(f"Total Votes: {str(total_votes)}", file=text_file)
     print("------------------", file=text_file)
-    print(f"Khan: {str(kvote)}", file=text_file)
+    print(f"Khan: {str(kpercent)}  {str(kvote)}", file=text_file)
+    print(f"Correy: {str(cpercent)}  {str(cvote)}", file=text_file)
+    print(f"Li: {str(lpercent)}  {str(lvote)}", file=text_file)
+    print(f"O'Tooley: {str(tpercent)}  {str(tvote)}", file=text_file)
   #  print(f"Average Change: {str(avg_profit_loss)}", file=text_file)
    # print(f"Greatest Increase of Profits: {str(max_profit)}", file=text_file)
     #print(f"Greatest Decrease in Profits {str(loss_profit)}", file=text_file)
