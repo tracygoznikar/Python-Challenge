@@ -19,6 +19,11 @@ kvote = 0
 cvote = 0
 lvote = 0
 tvote = 0
+kpercent = 0
+cpercent = 0
+lpercent = 0
+tpercent = 0
+
 
 #initializing rows
 Voter_ID = []
@@ -45,6 +50,13 @@ with open(csvpath, 'r') as csvfile:
             lvote = lvote + 1
         if Candidate == "O'Tooley":
             tvote = tvote + 1
+  # percent of votes each candidate won
+    (kvote / total_votes) * 100 = kpercent
+    (cvote / total_votes) * 100 = cpercent
+    (lvote / total_votes) * 100 = lpercent
+    (tvote / total_votes) * 100 = tpercent
+
+
   #total number of votes cast
 total_votes = csvreader.line_num - 1
   # percent of votes each candidate won
