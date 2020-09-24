@@ -67,14 +67,14 @@ lpercent = "{:.3%}".format(lvote/total_votes)
 tpercent = "{:.3%}".format(tvote/total_votes)
   #winner of election based on votes
 
-if kpercent > "{:.3%}".format(50):
-        Candidate = winner
-#if cpercent > 50:
-#        Candidate = winner
-#if lpercent > 50:
-#        Candidate = winner
-#if tpercent > 50:
-#        Candidate = winner
+if (kvote > cvote) and (kvote > lvote) and (kvote > tvote):
+   winner = "Khan"
+elif (cvote > kvote) and (cvote > lvote) and (cvote > tvote):
+   winner = "Correy"
+elif (lvote > kvote) and (lvote > cvote) and (lvote > tvote):
+   winner = "Li"
+elif (tvote > kvote) and (tvote > cvote) and (tvote > lvote):
+   winner = "O'Tooley"
 
 with open(outpath, 'w') as text_file:   
     # Print out the ouput
